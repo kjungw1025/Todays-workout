@@ -196,4 +196,8 @@ h4 > a {
   color: black;
   font-weight: bold;
 }
+
+h4 > a:hover {
+  color:dimgray;
+}
 </style>
