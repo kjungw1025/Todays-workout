@@ -2,7 +2,8 @@ const { Post, Hashtag, Comment, User } = require('../models');
 
 exports.afterUploadImage = (req, res) => {
     console.log(req.files);
-    res.json({ url: `/img/${req.file.filename}`});
+    // res.json({ url: `/img/${req.file.filename}`});
+    res.json({ url: req.file.location });
 };
 
 exports.uploadPost = async (req, res, next) => {
