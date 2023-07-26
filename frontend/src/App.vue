@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
           <router-link to="/" class="navbar-brand">
-            <img alt="Vue logo" src="./assets/logo.png" style="height:25px;" />
+            <img alt="Vue logo" src="./assets/logo1.png" style="height:50px;" />
           </router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
                 <router-link to="/" class="nav-link">Home</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/about" class="nav-link">부위별 머신운동</router-link>
+                <router-link to="/machine" class="nav-link">부위별 머신운동</router-link>
               </li>
               <li class="nav-item">
                 <router-link to="/custom" class="nav-link">커스텀</router-link>
