@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 const passport = require('passport');
 const helmet = require('helmet');
 const hpp = require('hpp');
-const RedisStore = require('connect-redis').default;
+const RedisStore = require('connect-redis')(session);
 const redis = require('redis');
 const cors = require('cors');
 
@@ -16,10 +16,10 @@ const cors = require('cors');
 dotenv.config(); // process.env
 // process.env.COOKIE_SECRET 있음
 const redisClient = redis.createClient({
-    url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
-    password: process.env.REDIS_PASSWORD,
+  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+  password: process.env.REDIS_PASSWORD,
+  legacyMode: true,
 });
-redisClient.connect().catch(console.error);
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/post');
@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === 'production') {
     app.enable('trust proxy'); // proxy server를 사용한다면 넣어주면 좋음
     app.use(morgan('combined'));
     app.use(
-        helment({
+        helmet({
             contentSecurityPolicy: false,
             crossOriginEmbedderPolicy: false,
             crossOriginResourcePolicy: false,

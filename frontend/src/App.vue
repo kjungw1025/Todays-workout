@@ -18,9 +18,6 @@
                 <router-link to="/machine" class="nav-link">부위별 머신운동</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/custom" class="nav-link">커스텀</router-link>
-              </li>
-              <li class="nav-item">
                 <router-link to="/gymwear" class="nav-link">짐웨어 브랜드</router-link>
               </li>
               <li class="nav-item">
