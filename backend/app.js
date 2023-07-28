@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === 'production') {
     );
     app.use(hpp());
     app.use(cors({
-        origin: 'http://project.com',   // 나중에 배포시 도메인
+        origin: process.env.DEPLOY_IP,   // 나중에 배포시 도메인
         credentials: true,
     }));
 } else {
