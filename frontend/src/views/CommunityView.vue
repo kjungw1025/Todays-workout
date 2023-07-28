@@ -5,7 +5,7 @@
       id="iframe1" 
       width="100%"
       height="3000px"
-      src="http://localhost:8003/" 
+      :src="serve" 
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       allowfullscreen
@@ -13,6 +13,21 @@
     </iframe>
   </div>
 </template>
+
+<script>
+import dotenv from 'dotenv';
+dotenv.config();
+
+export default {
+  data() {
+    return {
+      serve: process.env.VUE_APP_COMMUNITY,
+    }
+  }
+}
+</script>
+
+
 
 <style scoped>
   /* div {
