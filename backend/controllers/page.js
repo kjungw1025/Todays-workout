@@ -6,7 +6,7 @@ exports.renderProfile = (req, res) => {
 };
 
 exports.renderJoin = (req, res) => {
-    res.render('Join', { title: '회원 가입 - NodeBird' });
+    res.render('join', { title: '회원 가입 - NodeBird' });
 };
 
 exports.renderMain = async (req, res, next) => {
