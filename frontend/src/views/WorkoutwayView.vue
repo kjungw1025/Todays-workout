@@ -35,18 +35,21 @@
 
 <script>
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default {
     data() {
         return {
           urlList: [],
+          serve: process.env.VUE_APP_COMMUNITY,
         }
     },
     created() {
         console.log('store 정상 작동 확인', this.$store.state.selectedMachine);
         axios({
           method: 'post',
-          url: `http://localhost:8003/machine/${this.$route.query.id}`,
+          url: `${this.serve}machine/${this.$route.query.id}`,
           data: {
             machineList: this.$store.state.selectedMachine,
           },

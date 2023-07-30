@@ -20,6 +20,8 @@
 <script>
 import axios from 'axios';
 import router from "../router/index.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default {
     data() {
@@ -28,10 +30,11 @@ export default {
             response: [],
             machine: [],
             machineIdx: [],
+            serve: process.env.VUE_APP_COMMUNITY,
         }
     },
     created() {
-        axios.get(`http://localhost:8003/machine/${this.$route.query.id}`)
+        axios.get(`${this.serve}machine/${this.$route.query.id}`)
           .then(res => {
             this.partId = this.$route.query.id;
             this.response = res.data;
